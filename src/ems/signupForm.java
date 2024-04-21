@@ -334,7 +334,13 @@ public class signupForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new signupForm().setVisible(true);
+                try {
+                    new signupForm().setVisible(true);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(signupForm.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(signupForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
