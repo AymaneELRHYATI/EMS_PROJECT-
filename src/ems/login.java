@@ -59,7 +59,7 @@ public class login extends javax.swing.JFrame {
         mainPanel.setBackground(new java.awt.Color(204, 204, 204));
         mainPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 153)));
 
-        headerPanel.setBackground(new java.awt.Color(102, 102, 102));
+        headerPanel.setBackground(new java.awt.Color(51, 153, 255));
         headerPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -74,7 +74,7 @@ public class login extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("Login ");
-        headerPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
+        headerPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
 
         pass.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         pass.setForeground(new java.awt.Color(102, 102, 102));
@@ -96,10 +96,10 @@ public class login extends javax.swing.JFrame {
 
         jLabel4.setBackground(new java.awt.Color(153, 153, 153));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel4.setForeground(new java.awt.Color(51, 153, 255));
         jLabel4.setText("Username/Password?");
 
-        btnlogin.setBackground(new java.awt.Color(153, 153, 153));
+        btnlogin.setBackground(new java.awt.Color(51, 153, 255));
         btnlogin.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnlogin.setText("Log in !");
         btnlogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -114,9 +114,15 @@ public class login extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(51, 153, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setForeground(new java.awt.Color(51, 153, 255));
         jLabel5.setText("Don't have an account ");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -212,6 +218,9 @@ public class login extends javax.swing.JFrame {
                 
                 if(rs.next()){
                     JOptionPane.showMessageDialog(null,"Log in succ ");
+                    MainMenu m = new MainMenu();
+                    m.setVisible(true);
+                    this.dispose();
                 }else{
                     
                     JOptionPane.showMessageDialog(null,"Log in Failed ");
@@ -224,6 +233,19 @@ public class login extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnloginMouseClicked
 
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        try {
+            // TODO add your handling code here:
+            signupForm s = new signupForm();
+            s.setVisible(true);
+            this.dispose();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jLabel5MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -235,7 +257,7 @@ public class login extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
