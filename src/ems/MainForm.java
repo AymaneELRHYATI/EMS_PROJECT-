@@ -5,13 +5,20 @@
  */
 package ems;
 
+import java.awt.Color;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JPanel;
+
 /**
  *
  * @author abderr
  */
 public class MainForm extends javax.swing.JFrame {
-
+    
     /**
+     * 
      * Creates new form MainForm
      */
     public MainForm() {
@@ -50,14 +57,56 @@ public class MainForm extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         headerPanel = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        centrePanel = new javax.swing.JPanel();
+        p1 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        addEmployee = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        updateEmployee = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        deleteEmployee = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        reportEmployee = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        calculateSalary = new javax.swing.JPanel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        updateSalary = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        generateReceipt = new javax.swing.JPanel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        generateSalary = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        p2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        mainPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 2, new java.awt.Color(153, 153, 153)));
         mainPanel.setPreferredSize(new java.awt.Dimension(130, 600));
         mainPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sidePanel.setBackground(new java.awt.Color(0, 0, 104));
         sidePanel.setPreferredSize(new java.awt.Dimension(130, 600));
+        sidePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sidePanelMouseClicked(evt);
+            }
+        });
         sidePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -76,6 +125,11 @@ public class MainForm extends javax.swing.JFrame {
         sidePanel.add(lblEmpDesignation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 95, 130, 15));
 
         btn5.setBackground(new java.awt.Color(0, 0, 51));
+        btn5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn5MouseClicked(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,6 +151,11 @@ public class MainForm extends javax.swing.JFrame {
         sidePanel.add(btn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 90, 30));
 
         btn1.setBackground(new java.awt.Color(0, 0, 51));
+        btn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn1MouseClicked(evt);
+            }
+        });
         btn1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -114,12 +173,16 @@ public class MainForm extends javax.swing.JFrame {
         sidePanel.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 160, 124, 60));
 
         btn2.setBackground(new java.awt.Color(0, 0, 51));
+        btn2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn2MouseClicked(evt);
+            }
+        });
         btn2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Employee_Icon.png"))); // NOI18N
-        jLabel5.setText("jLabel3");
-        btn2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, 130, 30));
+        btn2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 40, 30));
 
         jLabel6.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,12 +194,16 @@ public class MainForm extends javax.swing.JFrame {
         sidePanel.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 220, 124, 60));
 
         btn3.setBackground(new java.awt.Color(0, 0, 51));
+        btn3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn3MouseClicked(evt);
+            }
+        });
         btn3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Salary_Icon.png"))); // NOI18N
-        jLabel7.setText("jLabel3");
-        btn3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, 130, 30));
+        btn3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 40, 30));
 
         jLabel8.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,12 +215,16 @@ public class MainForm extends javax.swing.JFrame {
         sidePanel.add(btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 130, 60));
 
         btn4.setBackground(new java.awt.Color(0, 0, 51));
+        btn4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn4MouseClicked(evt);
+            }
+        });
         btn4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Leave_Icon.png"))); // NOI18N
-        jLabel9.setText("jLabel3");
-        btn4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, 130, 30));
+        btn4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 50, 30));
 
         jLabel10.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,6 +236,11 @@ public class MainForm extends javax.swing.JFrame {
         sidePanel.add(btn4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 130, 60));
 
         btn6.setBackground(new java.awt.Color(0, 0, 51));
+        btn6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn6MouseClicked(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
@@ -188,6 +264,7 @@ public class MainForm extends javax.swing.JFrame {
         mainPanel.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 600));
 
         headerPanel.setBackground(new java.awt.Color(255, 255, 255));
+        headerPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 2, new java.awt.Color(153, 153, 153)));
         headerPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Cancel_Icon.png"))); // NOI18N
@@ -197,9 +274,228 @@ public class MainForm extends javax.swing.JFrame {
             }
         });
         headerPanel.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 5, -1, -1));
-        jLabel12.getAccessibleContext().setAccessibleName("");
+
+        jLabel34.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel34.setText("About Us");
+        jLabel34.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        headerPanel.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 60, -1));
+
+        jLabel35.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel35.setText("Our Blog");
+        jLabel35.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        headerPanel.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 60, -1));
+
+        jLabel36.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel36.setText("Contact");
+        jLabel36.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        headerPanel.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 60, -1));
 
         mainPanel.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 1, 900, 35));
+
+        centrePanel.setLayout(new java.awt.CardLayout());
+
+        p1.setBackground(new java.awt.Color(218, 228, 230));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Welcome to EMP System");
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel14.setText("Employee Section");
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Identicator_Icon.png"))); // NOI18N
+
+        addEmployee.setBackground(new java.awt.Color(255, 255, 255));
+        addEmployee.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        addEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Add_Icon.png"))); // NOI18N
+        addEmployee.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(51, 204, 0));
+        jLabel17.setText("Add Employee");
+        addEmployee.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        updateEmployee.setBackground(new java.awt.Color(255, 255, 255));
+        updateEmployee.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        updateEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Update_Icon.png"))); // NOI18N
+        updateEmployee.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel19.setText("Update Employee");
+        updateEmployee.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        deleteEmployee.setBackground(new java.awt.Color(255, 255, 255));
+        deleteEmployee.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        deleteEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Delete_Icon.png"))); // NOI18N
+        deleteEmployee.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel21.setText("Delete Employee");
+        deleteEmployee.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        reportEmployee.setBackground(new java.awt.Color(255, 255, 255));
+        reportEmployee.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        reportEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Report_Icon.png"))); // NOI18N
+        reportEmployee.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel23.setText("Employee Report");
+        reportEmployee.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel24.setText("Salary Section");
+
+        calculateSalary.setBackground(new java.awt.Color(255, 255, 255));
+        calculateSalary.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        calculateSalary.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Calculate_Salary_Icon.png"))); // NOI18N
+        calculateSalary.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel26.setText("Calculate Salary");
+        calculateSalary.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        jLabel27.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Identicator_Icon.png"))); // NOI18N
+
+        updateSalary.setBackground(new java.awt.Color(255, 255, 255));
+        updateSalary.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        updateSalary.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Update_Salary_Icon.png"))); // NOI18N
+        updateSalary.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(204, 0, 102));
+        jLabel29.setText("Update Salary");
+        updateSalary.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        generateReceipt.setBackground(new java.awt.Color(255, 255, 255));
+        generateReceipt.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        generateReceipt.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Salary_Receipt_Icon.png"))); // NOI18N
+        generateReceipt.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel31.setText("Generate Receipt");
+        generateReceipt.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        generateSalary.setBackground(new java.awt.Color(255, 255, 255));
+        generateSalary.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        generateSalary.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Generate_Salary_Icon.png"))); // NOI18N
+        generateSalary.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
+
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(0, 204, 51));
+        jLabel33.setText("Generate Salary");
+        generateSalary.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        javax.swing.GroupLayout p1Layout = new javax.swing.GroupLayout(p1);
+        p1.setLayout(p1Layout);
+        p1Layout.setHorizontalGroup(
+            p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(p1Layout.createSequentialGroup()
+                        .addGroup(p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(p1Layout.createSequentialGroup()
+                                .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(updateEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(deleteEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(reportEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(p1Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel15))
+                            .addGroup(p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(p1Layout.createSequentialGroup()
+                                .addComponent(updateSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(generateSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(generateReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(calculateSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(p1Layout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel27)))))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+        p1Layout.setVerticalGroup(
+            p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel13)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addGroup(p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(deleteEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reportEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(p1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(updateSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(generateSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(generateReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calculateSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        centrePanel.add(p1, "card2");
+
+        javax.swing.GroupLayout p2Layout = new javax.swing.GroupLayout(p2);
+        p2.setLayout(p2Layout);
+        p2Layout.setHorizontalGroup(
+            p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 769, Short.MAX_VALUE)
+        );
+        p2Layout.setVerticalGroup(
+            p2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        centrePanel.add(p2, "card3");
+
+        mainPanel.add(centrePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 35, 769, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -215,12 +511,83 @@ public class MainForm extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    private void onClick(JPanel Panel){
+        Panel.setBackground(new Color(0,153,204)) ;
+    }
+    private void onLeaveClick(JPanel Panel){
+        Panel.setBackground(new Color(0,0,51)) ;
+    }
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void sidePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sidePanelMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_sidePanelMouseClicked
+
+    private void btn2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn2MouseClicked
+        // TODO add your handling code here:
+        onClick(btn2) ; 
+        onLeaveClick(btn1) ;
+        onLeaveClick(btn3) ;
+        onLeaveClick(btn4) ;
+        onLeaveClick(btn5) ;
+    }//GEN-LAST:event_btn2MouseClicked
+
+    private void btn3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn3MouseClicked
+        // TODO add your handling code here:
+        onClick(btn3) ; 
+        onLeaveClick(btn2) ;
+        onLeaveClick(btn1) ;
+        onLeaveClick(btn4) ;
+        onLeaveClick(btn5) ;
+    }//GEN-LAST:event_btn3MouseClicked
+
+    private void btn4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn4MouseClicked
+        // TODO add your handling code here:
+        onClick(btn4) ; 
+        onLeaveClick(btn2) ;
+        onLeaveClick(btn3) ;
+        onLeaveClick(btn1) ;
+        onLeaveClick(btn5) ;
+    }//GEN-LAST:event_btn4MouseClicked
+
+    private void btn5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn5MouseClicked
+        // TODO add your handling code here:
+        onClick(btn5) ; 
+        onLeaveClick(btn2) ;
+        onLeaveClick(btn3) ;
+        onLeaveClick(btn4) ;
+        onLeaveClick(btn1) ;
+    }//GEN-LAST:event_btn5MouseClicked
+
+    private void btn6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn6MouseClicked
+        // TODO add your handling code here:
+        login l = null;
+        try {
+            l = new login();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(MainForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        l.setVisible(true);
+        this.dispose() ;
+        
+    }//GEN-LAST:event_btn6MouseClicked
+
+    private void btn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn1MouseClicked
+        // TODO add your handling code here:
+        onClick(btn1) ; 
+        onLeaveClick(btn2) ;
+        onLeaveClick(btn3) ;
+        onLeaveClick(btn4) ;
+        onLeaveClick(btn5) ;
+    }//GEN-LAST:event_btn1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -258,28 +625,64 @@ public class MainForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel addEmployee;
     private javax.swing.JPanel btn1;
     private javax.swing.JPanel btn2;
     private javax.swing.JPanel btn3;
     private javax.swing.JPanel btn4;
     private javax.swing.JPanel btn5;
     private javax.swing.JPanel btn6;
+    private javax.swing.JPanel calculateSalary;
+    private javax.swing.JPanel centrePanel;
+    private javax.swing.JPanel deleteEmployee;
+    private javax.swing.JPanel generateReceipt;
+    private javax.swing.JPanel generateSalary;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblEmpDesignation;
     private javax.swing.JLabel lblEmpName;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JPanel p1;
+    private javax.swing.JPanel p2;
+    private javax.swing.JPanel reportEmployee;
     private javax.swing.JPanel sidePanel;
+    private javax.swing.JPanel updateEmployee;
+    private javax.swing.JPanel updateSalary;
     // End of variables declaration//GEN-END:variables
 }
