@@ -21,8 +21,15 @@ public class MainForm extends javax.swing.JFrame {
      * 
      * Creates new form MainForm
      */
+    int mouseX , mouseY ; 
     public MainForm() {
         initComponents();
+    }
+    
+     public MainForm(String empName ,String empDes ) {
+        initComponents();
+        lblEmpName.setText(empName.toUpperCase() );
+        lblEmpDesignation.setText(empDes);
     }
 
     /**
@@ -94,6 +101,9 @@ public class MainForm extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         p2 = new javax.swing.JPanel();
+        p3 = new javax.swing.JPanel();
+        p4 = new javax.swing.JPanel();
+        p5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,7 +127,7 @@ public class MainForm extends javax.swing.JFrame {
         lblEmpName.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblEmpName.setForeground(new java.awt.Color(0, 204, 0));
         lblEmpName.setText("EmpName");
-        sidePanel.add(lblEmpName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 130, 15));
+        sidePanel.add(lblEmpName, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 60, 15));
 
         lblEmpDesignation.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblEmpDesignation.setForeground(new java.awt.Color(102, 204, 255));
@@ -137,6 +147,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("View Profile");
         jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout btn5Layout = new javax.swing.GroupLayout(btn5);
         btn5.setLayout(btn5Layout);
@@ -152,6 +163,7 @@ public class MainForm extends javax.swing.JFrame {
         sidePanel.add(btn5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 90, 30));
 
         btn1.setBackground(new java.awt.Color(0, 0, 51));
+        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn1MouseClicked(evt);
@@ -161,8 +173,7 @@ public class MainForm extends javax.swing.JFrame {
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Laptop_Icon.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        btn1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 5, 130, 30));
+        btn1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 10, 130, 30));
 
         jLabel4.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -171,9 +182,10 @@ public class MainForm extends javax.swing.JFrame {
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 130, 10));
 
-        sidePanel.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 160, 124, 60));
+        sidePanel.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-6, 160, 140, 60));
 
         btn2.setBackground(new java.awt.Color(0, 0, 51));
+        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn2MouseClicked(evt);
@@ -192,9 +204,10 @@ public class MainForm extends javax.swing.JFrame {
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 130, 15));
 
-        sidePanel.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(3, 220, 124, 60));
+        sidePanel.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 220, 130, 60));
 
         btn3.setBackground(new java.awt.Color(0, 0, 51));
+        btn3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn3MouseClicked(evt);
@@ -216,6 +229,7 @@ public class MainForm extends javax.swing.JFrame {
         sidePanel.add(btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 130, 60));
 
         btn4.setBackground(new java.awt.Color(0, 0, 51));
+        btn4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn4MouseClicked(evt);
@@ -248,6 +262,7 @@ public class MainForm extends javax.swing.JFrame {
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Log Out");
         jLabel11.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 2, 1, new java.awt.Color(255, 255, 255)));
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout btn6Layout = new javax.swing.GroupLayout(btn6);
         btn6.setLayout(btn6Layout);
@@ -266,6 +281,16 @@ public class MainForm extends javax.swing.JFrame {
 
         headerPanel.setBackground(new java.awt.Color(255, 255, 255));
         headerPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 2, new java.awt.Color(153, 153, 153)));
+        headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerPanelMouseDragged(evt);
+            }
+        });
+        headerPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerPanelMousePressed(evt);
+            }
+        });
         headerPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Cancel_Icon.png"))); // NOI18N
@@ -311,6 +336,7 @@ public class MainForm extends javax.swing.JFrame {
 
         addEmployee.setBackground(new java.awt.Color(255, 255, 255));
         addEmployee.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        addEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Add_Icon.png"))); // NOI18N
@@ -326,6 +352,7 @@ public class MainForm extends javax.swing.JFrame {
 
         updateEmployee.setBackground(new java.awt.Color(255, 255, 255));
         updateEmployee.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        updateEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         updateEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Update_Icon.png"))); // NOI18N
@@ -338,6 +365,7 @@ public class MainForm extends javax.swing.JFrame {
 
         deleteEmployee.setBackground(new java.awt.Color(255, 255, 255));
         deleteEmployee.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        deleteEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Delete_Icon.png"))); // NOI18N
@@ -350,6 +378,7 @@ public class MainForm extends javax.swing.JFrame {
 
         reportEmployee.setBackground(new java.awt.Color(255, 255, 255));
         reportEmployee.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        reportEmployee.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         reportEmployee.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Report_Icon.png"))); // NOI18N
@@ -364,6 +393,7 @@ public class MainForm extends javax.swing.JFrame {
 
         calculateSalary.setBackground(new java.awt.Color(255, 255, 255));
         calculateSalary.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        calculateSalary.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         calculateSalary.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Calculate_Salary_Icon.png"))); // NOI18N
@@ -378,6 +408,7 @@ public class MainForm extends javax.swing.JFrame {
 
         updateSalary.setBackground(new java.awt.Color(255, 255, 255));
         updateSalary.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        updateSalary.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         updateSalary.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Update_Salary_Icon.png"))); // NOI18N
@@ -390,6 +421,7 @@ public class MainForm extends javax.swing.JFrame {
 
         generateReceipt.setBackground(new java.awt.Color(255, 255, 255));
         generateReceipt.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        generateReceipt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         generateReceipt.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Salary_Receipt_Icon.png"))); // NOI18N
@@ -402,6 +434,7 @@ public class MainForm extends javax.swing.JFrame {
 
         generateSalary.setBackground(new java.awt.Color(255, 255, 255));
         generateSalary.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(153, 153, 153)));
+        generateSalary.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         generateSalary.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Generate_Salary_Icon.png"))); // NOI18N
@@ -499,6 +532,45 @@ public class MainForm extends javax.swing.JFrame {
 
         centrePanel.add(p2, "card3");
 
+        javax.swing.GroupLayout p3Layout = new javax.swing.GroupLayout(p3);
+        p3.setLayout(p3Layout);
+        p3Layout.setHorizontalGroup(
+            p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 769, Short.MAX_VALUE)
+        );
+        p3Layout.setVerticalGroup(
+            p3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        centrePanel.add(p3, "card4");
+
+        javax.swing.GroupLayout p4Layout = new javax.swing.GroupLayout(p4);
+        p4.setLayout(p4Layout);
+        p4Layout.setHorizontalGroup(
+            p4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 769, Short.MAX_VALUE)
+        );
+        p4Layout.setVerticalGroup(
+            p4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        centrePanel.add(p4, "card6");
+
+        javax.swing.GroupLayout p5Layout = new javax.swing.GroupLayout(p5);
+        p5.setLayout(p5Layout);
+        p5Layout.setHorizontalGroup(
+            p5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 769, Short.MAX_VALUE)
+        );
+        p5Layout.setVerticalGroup(
+            p5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        centrePanel.add(p5, "card5");
+
         mainPanel.add(centrePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 35, 769, 560));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -540,6 +612,14 @@ public class MainForm extends javax.swing.JFrame {
         onLeaveClick(btn3) ;
         onLeaveClick(btn4) ;
         onLeaveClick(btn5) ;
+        
+        
+         // Switching panels on click 
+        p1.setVisible(false);
+        p2.setVisible(true);
+        p3.setVisible(false);
+        p4.setVisible(false);
+        p5.setVisible(false);
     }//GEN-LAST:event_btn2MouseClicked
 
     private void btn3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn3MouseClicked
@@ -549,6 +629,13 @@ public class MainForm extends javax.swing.JFrame {
         onLeaveClick(btn1) ;
         onLeaveClick(btn4) ;
         onLeaveClick(btn5) ;
+        
+        // Switching panels on click 
+        p1.setVisible(false);
+        p2.setVisible(false);
+        p3.setVisible(true);
+        p4.setVisible(false);
+        p5.setVisible(false);
     }//GEN-LAST:event_btn3MouseClicked
 
     private void btn4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn4MouseClicked
@@ -558,6 +645,13 @@ public class MainForm extends javax.swing.JFrame {
         onLeaveClick(btn3) ;
         onLeaveClick(btn1) ;
         onLeaveClick(btn5) ;
+        
+        // Switching panels on click 
+        p1.setVisible(false);
+        p2.setVisible(false);
+        p3.setVisible(false);
+        p4.setVisible(true);
+        p5.setVisible(false);
     }//GEN-LAST:event_btn4MouseClicked
 
     private void btn5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn5MouseClicked
@@ -567,6 +661,13 @@ public class MainForm extends javax.swing.JFrame {
         onLeaveClick(btn3) ;
         onLeaveClick(btn4) ;
         onLeaveClick(btn1) ;
+        
+        // Switching panels on click 
+        p1.setVisible(false);
+        p2.setVisible(false);
+        p3.setVisible(false);
+        p4.setVisible(false);
+        p5.setVisible(true);
     }//GEN-LAST:event_btn5MouseClicked
 
     private void btn6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn6MouseClicked
@@ -591,7 +692,28 @@ public class MainForm extends javax.swing.JFrame {
         onLeaveClick(btn3) ;
         onLeaveClick(btn4) ;
         onLeaveClick(btn5) ;
+        
+        // Switching panels on click 
+        p1.setVisible(true);
+        p2.setVisible(false);
+        p3.setVisible(false);
+        p4.setVisible(false);
+        p5.setVisible(false);
+        
     }//GEN-LAST:event_btn1MouseClicked
+
+    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
+        // TODO add your handling code here:
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        setLocation(x - mouseX,y - mouseY);
+    }//GEN-LAST:event_headerPanelMouseDragged
+
+    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
+        // TODO add your handling code here:
+        mouseX = evt.getX() ;
+        mouseY = evt.getY(); 
+    }//GEN-LAST:event_headerPanelMousePressed
 
     /**
      * @param args the command line arguments
@@ -685,6 +807,9 @@ public class MainForm extends javax.swing.JFrame {
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel p1;
     private javax.swing.JPanel p2;
+    private javax.swing.JPanel p3;
+    private javax.swing.JPanel p4;
+    private javax.swing.JPanel p5;
     private javax.swing.JPanel reportEmployee;
     private javax.swing.JPanel sidePanel;
     private javax.swing.JPanel updateEmployee;
