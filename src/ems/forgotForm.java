@@ -266,7 +266,7 @@ public class forgotForm extends javax.swing.JFrame {
     private void txtUnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUnameFocusLost
         // TODO add your handling code here:
         if(txtUname.getText().trim().equals("")){
-            txtUname.setText("   Enter username");
+            txtUname.setText("   Enter username :");
             txtUname.setText("");
             txtUname.setText("");
             txtUname.setText("");
