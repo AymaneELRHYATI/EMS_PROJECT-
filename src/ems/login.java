@@ -124,6 +124,7 @@ public class login extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 153, 255));
         jLabel5.setText("Don't have an account ");
+        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel5MouseClicked(evt);
@@ -223,10 +224,15 @@ public class login extends javax.swing.JFrame {
                 rs = ps.executeQuery();
                 
                 if(rs.next()){
+                    String name = rs.getString(3); 
+                    String des = rs.getString(5);
+                    
                     JOptionPane.showMessageDialog(null,"Log in succ ");
-                    MainMenu m = new MainMenu();
+                    MainForm m = new MainForm(name,des); 
                     m.setVisible(true);
                     this.dispose();
+                    
+                    
                 }else{
                     
                     JOptionPane.showMessageDialog(null,"Log in Failed ");
@@ -253,10 +259,17 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-        forgotForm f = new forgotForm();
-        f.setVisible(true);
-        this.dispose();
+        try {
+            // TODO add your handling code here:
+            forgotForm f = new forgotForm();
+            f.setVisible(true); 
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
     }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
