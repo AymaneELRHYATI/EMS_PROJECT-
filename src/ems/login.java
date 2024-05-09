@@ -98,6 +98,7 @@ public class login extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 153, 255));
         jLabel4.setText("Username/Password?");
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -222,15 +223,10 @@ public class login extends javax.swing.JFrame {
                 rs = ps.executeQuery();
                 
                 if(rs.next()){
-                    String name = rs.getString(3); 
-                    String des = rs.getString(5);
-                    
                     JOptionPane.showMessageDialog(null,"Log in succ ");
-                    MainForm m = new MainForm(name,des); 
+                    MainMenu m = new MainMenu();
                     m.setVisible(true);
                     this.dispose();
-                    
-                    
                 }else{
                     
                     JOptionPane.showMessageDialog(null,"Log in Failed ");
@@ -257,17 +253,10 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        try {
-            // TODO add your handling code here:
-            forgotForm f = new forgotForm();
-            f.setVisible(true); 
-            this.dispose();
-        } catch (SQLException ex) {
-            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
+        // TODO add your handling code here:
+        forgotForm f = new forgotForm();
+        f.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
